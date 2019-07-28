@@ -33,7 +33,6 @@ CREATE TABLE [DOCGIA](
 	[Email] [nvarchar](30) NULL,
 	[NgayLapThe] [datetime] NULL,
 	[NgayHetHan] [datetime] NULL,
-	[SoDienThoai] [varchar](12) NULL,
 	CONSTRAINT [PK_DOCGIA_1] PRIMARY KEY (MaDocGia)
 )
 GO
