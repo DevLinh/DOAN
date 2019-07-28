@@ -28,6 +28,7 @@ CREATE TABLE [DOCGIA](
 	[MaDocGia] [varchar](50),
 	[HoTenDocGia] [nvarchar](40) NULL,
 	[NgaySinh] [datetime] NULL,
+	[SoDienThoai] [varchar](12) NULL,
 	[DiaChi] [nvarchar](50) NULL,
 	[Email] [nvarchar](30) NULL,
 	[NgayLapThe] [datetime] NULL,
