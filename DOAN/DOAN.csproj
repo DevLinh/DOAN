@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="frmMuonTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMuonTraSach.Designer.cs">
+      <DependentUpon>frmMuonTraSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

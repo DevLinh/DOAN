@@ -15,10 +15,10 @@ namespace DOAN
         DataSet ds; // Khởi tạo đói tượng chứa dữ liệu khi giao tiếp trong thư viện Data
 
         // Khởi tạo Constuctor Database tạo lập kết nối
-        public string srvName = "VIVOBOOKS\\SQLEXPRESS"; // Chỉ định tên Server
+        public string srvName = "NHAN-PC"; // Chỉ định tên Server
         public string dbName = "QLTHUVIEN_DOAN"; // Chỉ định tên DB
         public string dbUID = "sa";
-        public string dbPWD = "123den89"; // Mật khẩu Authentication
+        public string dbPWD = "hao"; // Mật khẩu Authentication
         public Database()
         {
             string strConn = "Data source=" + srvName + ";database=" + dbName + ";uid=" + dbUID + ";pwd = " + dbPWD + ";";
