@@ -16,7 +16,7 @@ namespace DOAN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MuonSach());
+            Application.Run(new frmMuonTraSach());
         }
     }
 }
