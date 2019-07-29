@@ -16,7 +16,9 @@ namespace DOAN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMuonTraSach());
+            frmLogin frmLogin = new frmLogin();
+            if (frmLogin.ShowDialog() == DialogResult.OK)
+                Application.Run(new frmMenu());
         }
     }
 }

@@ -15,10 +15,10 @@ namespace DOAN
         DataSet ds; // Khởi tạo đói tượng chứa dữ liệu khi giao tiếp trong thư viện Data
 
         // Khởi tạo Constuctor Database tạo lập kết nối
-        public string srvName = "NHAN-PC"; // Chỉ định tên Server
+        public string srvName = "VIVOBOOKS\\SQLEXPRESS"; // Chỉ định tên Server
         public string dbName = "QLTHUVIEN_DOAN"; // Chỉ định tên DB
         public string dbUID = "sa";
-        public string dbPWD = "hao"; // Mật khẩu Authentication
+        public string dbPWD = "123den89"; // Mật khẩu Authentication
         public Database()
         {
             string strConn = "Data source=" + srvName + ";database=" + dbName + ";uid=" + dbUID + ";pwd = " + dbPWD + ";";
@@ -41,6 +41,21 @@ namespace DOAN
             sqlConn.Open(); // Mở kết nối
             sqlcmd.ExecuteNonQuery(); // THực thi lệnh
             sqlConn.Close(); // Đóng kết nối
+        }
+
+        public bool KiemTraDangNhap(string username, string password)
+        {
+            string query = "select * from NHANVIEN where UserName = @user and Password = @pwd";
+            sqlConn.Open(); // Mở kết nối
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = sqlConn;
+            cmd.Parameters.Add("@user", SqlDbType.NVarChar).Value = username;
+            cmd.Parameters.Add("@pwd", SqlDbType.NVarChar).Value = password;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            return reader.Read();
         }
     }
 }

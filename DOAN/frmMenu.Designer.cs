@@ -1,6 +1,6 @@
 ﻿namespace DOAN
 {
-    partial class Menu
+    partial class frmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.btnThongTin = new System.Windows.Forms.Button();
             this.btnMuonSach = new System.Windows.Forms.Button();
             this.btnDocGia = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.btnCLose = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelTitle.SuspendLayout();
@@ -56,6 +58,8 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.Teal;
+            this.menuVertical.Controls.Add(this.label3);
+            this.menuVertical.Controls.Add(this.lblVersion);
             this.menuVertical.Controls.Add(this.btnThongTin);
             this.menuVertical.Controls.Add(this.btnMuonSach);
             this.menuVertical.Controls.Add(this.btnDocGia);
@@ -68,6 +72,18 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(250, 650);
             this.menuVertical.TabIndex = 0;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(113, 620);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(131, 21);
+            this.lblVersion.TabIndex = 3;
+            this.lblVersion.Text = "Phiên bản v0.01";
             // 
             // btnThongTin
             // 
@@ -141,6 +157,7 @@
             this.btnNhanVien.TabIndex = 2;
             this.btnNhanVien.Text = "Nhân Viên";
             this.btnNhanVien.UseVisualStyleBackColor = false;
+            this.btnNhanVien.Click += new System.EventHandler(this.BtnNhanVien_Click);
             // 
             // btnSach
             // 
@@ -159,16 +176,19 @@
             this.btnSach.TabIndex = 2;
             this.btnSach.Text = "Sách";
             this.btnSach.UseVisualStyleBackColor = false;
+            this.btnSach.Click += new System.EventHandler(this.BtnSach_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DOAN.Properties.Resources.icons8_book_shelf;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DOAN.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // PanelTitle
             // 
@@ -258,7 +278,19 @@
             this.panelContainer.Size = new System.Drawing.Size(1050, 595);
             this.panelContainer.TabIndex = 2;
             // 
-            // Menu
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(70, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 38);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "LIBRARY";
+            // 
+            // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,9 +300,12 @@
             this.Controls.Add(this.menuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Menu";
+            this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuVertical.ResumeLayout(false);
+            this.menuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
@@ -298,6 +333,8 @@
         private System.Windows.Forms.Button btnThongTin;
         private System.Windows.Forms.Button btnMuonSach;
         private System.Windows.Forms.Button btnDocGia;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Label label3;
     }
 }
 

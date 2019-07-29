@@ -11,13 +11,13 @@ using System.Runtime.InteropServices;
 
 namespace DOAN
 {
-    public partial class Menu : Form
+    public partial class frmMenu : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        public Menu()
+        public frmMenu()
         {
             InitializeComponent();
         }
@@ -27,10 +27,13 @@ namespace DOAN
             if (menuVertical.Width == 250)
             {
                 menuVertical.Width = 70;
+                lblVersion.Visible = false;
             } else
             {
                 menuVertical.Width = 250;
+                lblVersion.Visible = true;
             }
+            
         }
 
         private void BtnCLose_Click(object sender, EventArgs e)
@@ -79,6 +82,26 @@ namespace DOAN
         private void BtnThongTin_Click(object sender, EventArgs e)
         {
             CallChildFormToPanel(new frmThongTin());
+        }
+
+        private void BtnSach_Click(object sender, EventArgs e)
+        {
+            CallChildFormToPanel(new frmSach());
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            CallChildFormToPanel(new Background());
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            CallChildFormToPanel(new Background());
+        }
+
+        private void BtnNhanVien_Click(object sender, EventArgs e)
+        {
+            CallChildFormToPanel(new frmQuanLyNhanVien());
         }
     }
 }

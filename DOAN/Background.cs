@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace DOAN
 {
-    public partial class frmMuonTraSach : Form
+    public partial class Background : Form
     {
-        public frmMuonTraSach()
+        public Background()
         {
             InitializeComponent();
         }
+
     }
 }
